@@ -7,7 +7,6 @@
 		<prénom>Yves</prénom>
 		<nom>Bekkers</nom>
 		<organisme>IFSIC</organisme>
-		<?nom2 param1 param2 param3?>
 		<!-- Une adresse -->
 		<adresse>
 			<numéro>42</numéro>

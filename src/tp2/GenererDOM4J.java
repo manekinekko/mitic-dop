@@ -18,7 +18,7 @@ public class GenererDOM4J {
 		Element age = root.addElement("age").addText("28");
 		Element taille = root.addElement("taille").addText("1.80");
 		Element adresse = root.addElement("adresse");
-		adresse.addElement("ville").addAttribute("codePostale", "3500")
+		adresse.addElement("ville").addAttribute("codePostale", "35000")
 				.addText("Rennes");
 		adresse.addElement("voie").addAttribute("type", "rue")
 				.addText("de l'Alma");
