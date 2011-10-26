@@ -164,13 +164,13 @@ public class MY_DOM {
 		} catch (ParserConfigurationException pce) {
 			System.out.println("Erreur de configuration du parseur DOM");
 			System.out
-					.println("lors de l'appel à fabrique.newDocumentBuilder();");
+					.println("lors de l'appel ï¿½ fabrique.newDocumentBuilder();");
 		} catch (SAXException se) {
 			System.out.println("Erreur lors du parsing du document");
-			System.out.println("lors de l'appel à construteur.parse(xml)");
+			System.out.println("lors de l'appel ï¿½ construteur.parse(xml)");
 		} catch (IOException ioe) {
-			System.out.println("Erreur d'entrée/sortie");
-			System.out.println("lors de l'appel à construteur.parse(xml)");
+			System.out.println("Erreur d'entrï¿½e/sortie");
+			System.out.println("lors de l'appel ï¿½ construteur.parse(xml)");
 		}
 	}
 
@@ -185,7 +185,7 @@ public class MY_DOM {
 			String xpath20String = "for carte in "
 					+ " (//ville[ starts-with(@codepostal, '56') ]/parent::adresse/parent::carteDeVisite) "
 					+ " return "
-					+ " string-join($carte/nom, $carte/prénom, ' ')";
+					+ " string-join($carte/nom, $carte/prï¿½nom, ' ')";
 
 			String xpath10String = "//ville[ starts-with(@codepostal, '56') ]/parent::adresse/parent::carteDeVisite";
 
@@ -211,8 +211,8 @@ public class MY_DOM {
 				subChild = (NodeList) result;
 				nom += subChild.item(0).getTextContent() + " ";
 
-				// prénom
-				expr = xpath.compile("./prénom");
+				// prï¿½nom
+				expr = xpath.compile("./prï¿½nom");
 				result = expr.evaluate(node, XPathConstants.NODESET);
 				subChild = (NodeList) result;
 				nom += subChild.item(0).getTextContent();
@@ -228,7 +228,7 @@ public class MY_DOM {
 		} catch (ParserConfigurationException pce) {
 			System.out.println("Erreur de configuration du parseur DOM");
 			System.out
-					.println("lors de l'appel à fabrique.newDocumentBuilder();");
+					.println("lors de l'appel ï¿½ fabrique.newDocumentBuilder();");
 		} catch (XPathExpressionException e) {
 			e.printStackTrace();
 		} catch (SAXException e) {
@@ -353,11 +353,15 @@ public class MY_DOM {
 			xsltTransform(rawCalendar, xsltInputFile, outputCalendar);
 			
 			
-		} catch (ParserConfigurationException | SAXException | IOException e) {
+		} catch (ParserConfigurationException e) {
 			e.printStackTrace();
 		} catch (TransformerFactoryConfigurationError e) {
 			e.printStackTrace();
 		} catch (TransformerException e) {
+			e.printStackTrace();
+		} catch (SAXException e) {
+			e.printStackTrace();
+		}catch (IOException e) {
 			e.printStackTrace();
 		}
 
@@ -388,10 +392,12 @@ public class MY_DOM {
 			//
 			t.transform(xmlSource, transResult);
 
-		} catch (FileNotFoundException | TransformerException e) {
+		} catch (FileNotFoundException e) {
+			e.printStackTrace();
+		} catch (TransformerException e) {
 			e.printStackTrace();
 		}
-
+		
 	}
 
 	public static void main(String[] args) {

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mapping>
+	<description>Mappgin pour la bean Personne</description>
+	<class name="tp2.PersonneV2" auto-complete="true">
+		<field name="age">
+			<bind-xml name="age" node="element" />
+		</field>
+		<field name="taille">
+			<bind-xml name="taille" node="element" />
+		</field>
+		<field name="nom" type="string" />
+	</class>
+	<class name="tp2.Ville" auto-complete="true">
+		<field name="codePostal">
+			<bind-xml name="codePostal" node="attribute" />
+		</field>
+		<field name="nom">
+			<bind-xml name="nom" node="text" />
+		</field>
+	</class>
+</mapping>
