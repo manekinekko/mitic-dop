@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?><?xml-stylesheet type="text/xsl" href="calendar.xslt"?><CALENDAR>
+	<MONTH end="30" start="2">
+		<!-- start is the day of the week that the month
+starts. Wednesday in this case -->
+		<EVENT date="4">
+			<PARA>Some event description</PARA>
+		</EVENT>
+		<EVENT date="24">
+			<PARA>another event description</PARA>
+		</EVENT>
+		<!--Lots of time for vacation this month! -->
+	<TITLE>novembre 2004</TITLE></MONTH>
+	<MONTH end="31" start="4">
+		<EVENT date="5">
+			<PARA>Some event description</PARA>
+			<PARA>Second para of description</PARA>
+		</EVENT>
+		<EVENT date="17">
+			<PARA>first event description</PARA>
+		</EVENT>
+		<EVENT date="17">
+			<PARA>second event description</PARA>
+		</EVENT>
+	<TITLE>décembre 2004</TITLE></MONTH>
+	<!--May be more MONTHs -->
+</CALENDAR>
