@@ -1,15 +1,11 @@
 package tp2;
 
-import java.io.FileNotFoundException;
-import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
-
 import org.exolab.castor.mapping.Mapping;
 import org.exolab.castor.mapping.MappingException;
 import org.exolab.castor.xml.MarshalException;
 import org.exolab.castor.xml.Marshaller;
-import org.exolab.castor.xml.Unmarshaller;
 import org.exolab.castor.xml.ValidationException;
 
 public class CastorV2 {
@@ -26,15 +22,15 @@ public class CastorV2 {
 		try {
 
 			//
-			Mapping mappgin = new Mapping();
-			mappgin.loadMapping(mappingFile);
+			Mapping mapping = new Mapping();
+			mapping.loadMapping(mappingFile);
 
 			//
 			file = new FileWriter(output);
 
 			//
 			Marshaller marshaller = new Marshaller(file);
-			marshaller.setMapping(mappgin);
+			marshaller.setMapping(mapping);
 			marshaller.marshal(personne);
 
 			file.close();
