@@ -13,7 +13,7 @@ public class XPATH {
 		try {
 			SAXReader reader = new SAXReader();
 			Document document = reader.read("src/tp1/xml/carnetDAdresse.xml");
-			String xpath = "/carnetDAdresse/carteDeVisite/adresse/ville[ starts-with(@codepostal, '56') ]";
+			String xpath = "/carnetDAdresse/carteDeVisite/adresse/ville[ contains(., 'Vannes') ]";
 			List<?> list = document.selectNodes(xpath);
 
 			System.out.println("Nombre de carte de visite de <<Vannes>> est de "
@@ -32,7 +32,7 @@ public class XPATH {
 		try {
 			SAXReader reader = new SAXReader();
 			Document document = reader.read(inputXML);
-			String xpath = "/carnetDAdresse/carteDeVisite/adresse/ville[ starts-with(@codepostal, '35') ]";
+			String xpath = "/carnetDAdresse/carteDeVisite/adresse/ville[ contains(., 'Rennes') ]";
 
 			@SuppressWarnings("unchecked")
 			List<Element> nodes = document.selectNodes(xpath);
