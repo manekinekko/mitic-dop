@@ -268,7 +268,9 @@ public class MY_DOM {
 			Document xmlDocument = builder.parse(new File(
 					"src/tp1/xml/carnetDAdresse.xml"));
 			DOMSource source = new DOMSource(xmlDocument);
+			
 			StreamResult result = new StreamResult(System.out);
+			
 			TransformerFactory tf = TransformerFactory.newInstance();
 			Transformer transformer = tf.newTransformer();
 			transformer.setOutputProperty(OutputKeys.DOCTYPE_SYSTEM,

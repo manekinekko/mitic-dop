@@ -77,7 +77,7 @@ public class Castor {
 
 	public static void main(String[] args) {
 
-		Castor.exporter();
+		//Castor.exporter();
 		Castor.importer();
 	}
 
