@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="windows-1252"?>
+<produits>
+	<produit>
+		<p>p1</p>
+		<nom>cassis</nom>
+		<couleur>rouge</couleur>
+		<origine>Dijon</origine>
+	</produit>
+	<produit>
+		<p>p2</p>
+		<nom>champagne</nom>
+		<couleur>blanc</couleur>
+		<origine>Reims</origine>
+	</produit>
+	<produit>
+		<p>p3</p>
+		<nom>huitre</nom>
+		<couleur>vert</couleur>
+		<origine>Riec</origine>
+	</produit>
+	<produit>
+		<p>p4</p>
+		<nom>moutarde</nom>
+		<couleur>jaune</couleur>
+		<origine>Dijon</origine>
+	</produit>
+	<produit>
+		<p>p5</p>
+		<nom>salade</nom>
+		<couleur>vert</couleur>
+		<origine>Nice</origine>
+	</produit>
+	<produit>
+		<p>p6</p>
+		<nom>cornichon</nom>
+		<couleur>vert</couleur>
+		<origine>Dijon</origine>
+	</produit>
+	<produit>
+		<p>p7</p>
+		<nom>muscadet</nom>
+		<couleur>blanc</couleur>
+		<origine>Nantes</origine>
+	</produit>
+</produits>
