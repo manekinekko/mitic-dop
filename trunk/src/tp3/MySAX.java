@@ -1,7 +1,6 @@
 package tp3;
 
 import java.io.FileNotFoundException;
-import java.io.FileReader;
 import java.io.IOException;
 import org.xml.sax.InputSource;
 import org.xml.sax.SAXException;
