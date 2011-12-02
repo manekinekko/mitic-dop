@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2 d?c. 2011 08:34:14 by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="fr.ifsic.jdbc.film.Film" table="film" catalog="base_10006926">
+        <id name="f" type="java.lang.Integer">
+            <column name="f" />
+            <generator class="native" />
+        </id>
+        <many-to-one name="personne" class="fr.ifsic.jdbc.film.Personne" fetch="select">
+            <column name="p_rea" not-null="true" />
+        </many-to-one>
+        <property name="titre" type="string">
+            <column name="titre" length="25" not-null="true" />
+        </property>
+        <property name="annee" type="string">
+            <column name="annee" length="4" />
+        </property>
+        <property name="genre" type="string">
+            <column name="genre" length="15" />
+        </property>
+        <property name="duree" type="string">
+            <column name="duree" length="3" />
+        </property>
+        <set name="vedettes" table="vedette" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="f" not-null="true" />
+            </key>
+            <one-to-many class="fr.ifsic.jdbc.film.Vedette" />
+        </set>
+    </class>
+</hibernate-mapping>
