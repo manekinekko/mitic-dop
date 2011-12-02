@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2 d?c. 2011 08:34:14 by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="fr.ifsic.jdbc.film.Vedette" table="vedette" catalog="base_10006926">
+        <composite-id name="id" class="fr.ifsic.jdbc.film.VedetteId">
+            <key-property name="f" type="int">
+                <column name="f" />
+            </key-property>
+            <key-property name="p" type="int">
+                <column name="p" />
+            </key-property>
+        </composite-id>
+        <many-to-one name="film" class="fr.ifsic.jdbc.film.Film" update="false" insert="false" fetch="select">
+            <column name="f" not-null="true" />
+        </many-to-one>
+        <many-to-one name="personne" class="fr.ifsic.jdbc.film.Personne" update="false" insert="false" fetch="select">
+            <column name="p" not-null="true" />
+        </many-to-one>
+        <property name="role" type="string">
+            <column name="role" length="25" />
+        </property>
+    </class>
+</hibernate-mapping>

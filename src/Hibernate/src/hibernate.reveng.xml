@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-reverse-engineering PUBLIC "-//Hibernate/Hibernate Reverse Engineering DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-reverse-engineering-3.0.dtd" >
+
+<hibernate-reverse-engineering>
+  <table-filter match-catalog="base_10006926" match-name="acteur"/>
+  <table-filter match-catalog="base_10006926" match-name="film"/>
+  <table-filter match-catalog="base_10006926" match-name="personne"/>
+  <table-filter match-catalog="base_10006926" match-name="vedette"/>
+</hibernate-reverse-engineering>
