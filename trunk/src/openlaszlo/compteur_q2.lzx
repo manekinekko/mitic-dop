@@ -1,0 +1,68 @@
+<?xml version="1.0"?>
+<canvas debug="true">
+	<simplelayout axis="y" spacing="10" />
+	
+	<dataset name="incListe">
+		<incr>3</incr>
+		<incr>5</incr>
+		<incr>8</incr>
+		<incr>10</incr>
+	</dataset>
+
+	<class name="buttonInc" extends="button">
+		<attribute name="valueInc" />
+		<handler name="onclick">
+			increment.setAttribute("text",this.valueInc);
+		</handler>
+	</class>
+
+	<class name="compteur">
+		<attribute name="val" value="0" />
+		
+		<method name="afficher">
+			afficheur.setAttribute("text",compteur.val);
+		</method>
+		
+		<window name="main" width="300" height="200">
+			<simplelayout axis="y" spacing="10" />
+			
+			<view align="center" datapath="incListe:/">
+				<simplelayout axis="x" spacing="4" />
+				<buttonInc datapath="incr/text()" valueInc="$path{'text()'}"/>
+				<inputtext name="increment" id="increment" maxlength="10" width="30" bgcolor="0x8080ff" text="0" />
+			</view>
+			
+			<view align="center">
+				<simplelayout axis="x" spacing="4" />
+				<text>
+					<i>Compteur</i>
+				</text>
+				<inputtext name="afficheur" id="afficheur" maxlength="10" bgcolor="0x8080ff" text="${parent.parent.parent.val}" />
+			</view>
+			
+			<view align="center">
+				<simplelayout axis="x" spacing="4" />
+				<button text="Plus Inc">
+					<handler name="onclick">
+						compteur.val = compteur.val+parseInt(increment.text);
+						compteur.afficher();
+					</handler>
+				</button>
+				<button text="Zero">
+					<handler name="onclick">
+						compteur.val = 0;
+						compteur.afficher();
+					</handler>
+				</button>
+				<button text="Moins Inc">
+					<handler name="onclick">
+						compteur.val = compteur.val-parseInt(increment.text);
+						compteur.afficher();
+					</handler>
+				</button>
+			</view>
+			
+		</window>
+	</class>
+	<compteur val="5" id="compteur" />
+</canvas>
