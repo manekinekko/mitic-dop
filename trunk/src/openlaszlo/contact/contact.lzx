@@ -14,13 +14,16 @@ var next = dp.getNodeAttribute('next');-->
 	</dataset>
 
 	<class name="contact">
-		<window align="center" name="main" width="300" height="200">			
+		<window align="center" name="main" width="300" height="200">
+			<simplelayout axis="x" spacing="0" />		
 			<view datapath="lesContacts:/">
 				<simplelayout axis="y" spacing="0" />
 				<inputtext id="inputId" datapath="personne/@id"></inputtext>
+			</view>
+			<view datapath="lesContacts:/">
+				<simplelayout axis="y" spacing="0" />
 				<inputtext id="inputNom" datapath="personne/@nom"></inputtext>
 			</view>
-			
 		</window>
 	</class>
 
