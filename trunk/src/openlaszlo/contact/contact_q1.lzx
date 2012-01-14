@@ -17,12 +17,15 @@ var next = dp.getNodeAttribute('next');-->
 		<window align="center" name="main" width="300" height="200">
 			<simplelayout axis="x" spacing="0" />		
 			<view datapath="lesContacts:/">
-				<simplelayout axis="y" spacing="0" />
-				<inputtext id="inputId" datapath="personne/@id"></inputtext>
-			</view>
-			<view datapath="lesContacts:/">
-				<simplelayout axis="y" spacing="0" />
-				<inputtext id="inputNom" datapath="personne/@nom"></inputtext>
+				<simplelayout axis="x" spacing="0" />
+				<view>
+					<simplelayout axis="y" spacing="0" />
+					<inputtext id="inputId" datapath="personne/@id"></inputtext>
+				</view>
+				<view>
+					<simplelayout axis="y" spacing="0" />
+					<inputtext id="inputNom" datapath="personne/@nom"></inputtext>
+				</view>
 			</view>
 		</window>
 	</class>
