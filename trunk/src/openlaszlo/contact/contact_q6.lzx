@@ -1,0 +1,79 @@
+<?xml version="1.0"?>
+<canvas debug="true">
+
+	<dataset name="lesContacts" src="lesContacts.xml"></dataset>
+
+	<class name="contact">
+		<attribute name="savedid" />
+		
+		<method name="setdatapath" args="id">
+			showdata.setAttribute("datapath", "lesContacts:/contacts/personne[@id='"+id+"']/");
+		</method>
+		
+		<method name="getselectedid">
+			var id = contactgrid.getSelection()[0].getNodeAttribute("id");
+			return id;
+		</method>
+		
+		<window align="left" name="main" width="500" height="300">
+			<simplelayout axis="x" spacing="0" />		
+			<view>
+				<simplelayout axis="y" spacing="0" />
+				<grid id="contactgrid" datapath="lesContacts:/contacts" contentdatapath="personne" showhscroll="true" shownitems="3">
+					<handler name="onselect">
+						showdata.setAttribute("visible", "true");
+						var id = contact.getselectedid();
+						contact.setdatapath(id);
+						var dp = lesContacts.getPointer();
+						dp.selectChild();
+					</handler>
+				</grid>
+				<gridtext datapath="@id" editable="false">Id</gridtext>
+				<gridtext datapath="@nom" >Nom</gridtext>
+			</view>
+			<view id="showdata" visible="false" width="200">
+				<simplelayout axis="y" spacing="0" />
+				<text id="addentry" align="center"><i>Ajouter une entree</i>
+					<handler name="onclick">
+						savedid = contact.getselectedid();
+						editprenom.setAttribute("id", "p6");
+						editprenom.setAttribute("text", "");
+						editnom.setAttribute("text", "");
+						editemail.setAttribute("text", "");
+						this.setAttribute("text", "Annuler l'ajout");
+						submit.setAttribute("visible", "true");
+					</handler>
+				</text>
+				<view width="200">
+					<text align="left"><b>Id</b></text>
+					<edittext id="editid" datapath="@id" align="right" enabled="false"/>
+				</view>
+				<view width="200">
+					<text align="left"><b>Prenom</b></text>
+					<edittext id="editprenom" datapath="@nom" align="right"/>
+				</view>
+				<view width="200">
+					<text align="left"><b>Nom</b></text>
+					<edittext id="editnom" datapath="@prenom" align="right"/>
+				</view>
+				<view width="200">
+					<text align="left"><b>Email</b></text>
+					<edittext id="editemail" datapath="@email" align="right"/>
+				</view>
+				<button id="submit" align="center" visible="false">Ajouter
+					<handler name="onclick">
+						editprenom.setAttribute("id", "p6");
+						editprenom.setAttribute("text", "");
+						editnom.setAttribute("text", "");
+						editemail.setAttribute("text", "");
+						this.setAttribute("text", "Annuler l'ajout");
+						submit.setAttribute("visible", "true");
+					</handler>
+				</button>
+			</view>
+		</window>
+	</class>
+
+	<contact id="contact" />
+
+</canvas>
