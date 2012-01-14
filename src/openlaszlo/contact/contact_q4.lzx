@@ -1,0 +1,50 @@
+<?xml version="1.0"?>
+<canvas debug="true">
+
+	<dataset name="lesContacts">
+		<personne id="p1" nom="le blanc" prenom="jacques" email="leblanc@irisa.fr" />
+		<personne id="p2" nom="Dupont" prenom="pierre" email="pierrot@ifsic.fr" />
+		<personne id="p3" nom="durant" prenom="paul" email="polot@irisa.fr" />
+		<personne id="p4" nom="le cozig" prenom="hervé" email="herve@wanadoo.fr" />
+		<personne id="p5" nom="lemeur" prenom="duduche" email="leGrand@wanadoo.fr" />
+	</dataset>
+
+	<class name="contact">
+		<attribute name="id" />
+		<window align="left" name="main" width="500" height="300">
+			<simplelayout axis="x" spacing="0" />		
+			<view>
+				<simplelayout axis="y" spacing="0" />
+				<grid datapath="lesContacts:/" contentdatapath="personne" showhscroll="true" shownitems="3">
+					<handler name="onselect">
+						detail.setAttribute("visible", "true");
+						var id = this.getSelection()[0].getNodeAttribute("id");
+						showdata.setAttribute("datapath", "lesContacts:/personne[@id='"+id+"']/");
+					</handler>
+				</grid>
+				<gridtext datapath="@id" editable="false">Id</gridtext>
+				<gridtext datapath="@nom" >Nom</gridtext>
+			</view>
+			<view id="detail" visible="false">
+				<simplelayout axis="x" spacing="0" />
+				<view>
+					<simplelayout axis="y" spacing="0" />
+					<text><b>Id</b></text>
+					<text><b>Nom</b></text>
+					<text><b>Prenom</b></text>
+					<text><b>Email</b></text>			
+				</view>
+				<view id="showdata" datapath="lesContacts:/personne[@id='p1']/">
+					<simplelayout axis="y" spacing="0" />
+					<text datapath="@id"/>
+					<text datapath="@nom"/>
+					<text datapath="@prenom"/>
+					<text datapath="@email"/>
+				</view>
+			</view>
+		</window>
+	</class>
+
+	<contact id="contact" />
+
+</canvas>

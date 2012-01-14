@@ -1,10 +1,6 @@
 <?xml version="1.0"?>
 <canvas debug="true">
 
-<!--var dp = canvas.datasets.lesContacts.getPointer();
-dp.selectChild();
-var next = dp.getNodeAttribute('next');-->
-
 	<dataset name="lesContacts">
 		<personne id="p1" nom="le blanc" prenom="jacques" email="leblanc@irisa.fr" />
 		<personne id="p2" nom="Dupont" prenom="pierre" email="pierrot@ifsic.fr" />
@@ -18,14 +14,12 @@ var next = dp.getNodeAttribute('next');-->
 			<simplelayout axis="x" spacing="0" />		
 			<view datapath="lesContacts:/">
 				<simplelayout axis="x" spacing="0" />
-				<view>
-					<simplelayout axis="y" spacing="0" />
+				<vbox>
 					<inputtext id="inputId" datapath="personne/@id"></inputtext>
-				</view>
-				<view>
-					<simplelayout axis="y" spacing="0" />
+				</vbox>
+				<vbox>
 					<inputtext id="inputNom" datapath="personne/@nom"></inputtext>
-				</view>
+				</vbox>
 			</view>
 		</window>
 	</class>
