@@ -1,25 +1,18 @@
 <?xml version="1.0"?>
 <canvas debug="true">
 
-	<dataset name="lesContacts">
-		<personne id="p1" nom="le blanc" prenom="jacques" email="leblanc@irisa.fr" />
-		<personne id="p2" nom="Dupont" prenom="pierre" email="pierrot@ifsic.fr" />
-		<personne id="p3" nom="durant" prenom="paul" email="polot@irisa.fr" />
-		<personne id="p4" nom="le cozig" prenom="hervé" email="herve@wanadoo.fr" />
-		<personne id="p5" nom="lemeur" prenom="duduche" email="leGrand@wanadoo.fr" />
-	</dataset>
+	<dataset name="lesContacts" src="lesContacts.xml"></dataset>
 
 	<class name="contact">
-		<attribute name="id" />
 		<window align="left" name="main" width="500" height="300">
 			<simplelayout axis="x" spacing="0" />		
 			<view>
 				<simplelayout axis="y" spacing="0" />
-				<grid datapath="lesContacts:/" contentdatapath="personne" showhscroll="true" shownitems="3">
+				<grid datapath="lesContacts:/contacts/" contentdatapath="personne" showhscroll="true" shownitems="3">
 					<handler name="onselect">
 						showdata.setAttribute("visible", "true");
 						var id = this.getSelection()[0].getNodeAttribute("id");
-						showdata.setAttribute("datapath", "lesContacts:/personne[@id='"+id+"']/");
+						showdata.setAttribute("datapath", "lesContacts:/contacts/personne[@id='"+id+"']/");
 					</handler>
 				</grid>
 				<gridtext datapath="@id" editable="false">Id</gridtext>
@@ -40,7 +33,7 @@
 					<edittext datapath="@prenom" align="right"/>
 				</view>
 				<view width="200">
-					<text align="left"><b>Nom</b></text>
+					<text align="left"><b>Email</b></text>
 					<edittext datapath="@email" align="right"/>
 				</view>
 			</view>
