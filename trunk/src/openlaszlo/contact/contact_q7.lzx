@@ -90,7 +90,7 @@
 						
 						//creating node
 						var node = new lz.DataElement("personne", 
-						{"id":editid.getValue(),prenom:editprenom.getValue(),nom:editnom.getValue(),email:editemail.getValue()});
+						{"id":editid.getValue(),"prenom":editprenom.getValue(),"nom":editnom.getValue(),"email":editemail.getValue()});
 						dp.appendChild(node);
 						
 						//after adding node
