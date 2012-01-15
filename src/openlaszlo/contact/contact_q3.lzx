@@ -12,7 +12,7 @@
 					<handler name="onselect">
 						detail.setAttribute("visible", true);
 						var id = this.getSelection()[0].getNodeAttribute("id");
-						showdata.setAttribute("datapath", "lesContacts:/contacts/personne[@id='"+id+"']/");
+						detail.setAttribute("datapath", "lesContacts:/contacts/personne[@id='"+id+"']/");
 					</handler>
 				</grid>
 				<gridtext datapath="@id" >Id</gridtext>
@@ -20,20 +20,18 @@
 			</view>
 			<view id="detail" visible="false">
 				<simplelayout axis="x" spacing="0" />
-				<view>
-					<simplelayout axis="y" spacing="0" />
+				<vbox>
 					<text><b>Id</b></text>
 					<text><b>Nom</b></text>
 					<text><b>Prenom</b></text>
 					<text><b>Email</b></text>
-				</view>
-				<view id="showdata" datapath="lesContacts:/contacts/personne[@id='p1']/">
-					<simplelayout axis="y" spacing="0" />
+				</vbox>
+				<vbox>
 					<text datapath="@id"/>
 					<text datapath="@nom"/>
 					<text datapath="@prenom"/>
 					<text datapath="@email"/>
-				</view>
+				</vbox>
 			</view>
 		</window>
 	</class>
