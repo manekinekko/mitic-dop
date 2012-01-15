@@ -49,7 +49,7 @@
 							contact.setdatapath(null);
 							contact.setdatapath(contact.savedid);
 							submit.setAttribute("visible", false);
-						
+							remove.setAttribute("visible", true);
 						} else {
 							//save the id of the last selected contact
 							contact.savedid = contact.getselectedid();
@@ -62,6 +62,7 @@
 							
 							this.setAttribute("text", "Annuler l'ajout");
 							submit.setAttribute("visible", true);
+							remove.setAttribute("visible", false);
 						}
 						contact.addingcontact = !contact.addingcontact;
 					</handler>
@@ -96,6 +97,15 @@
 						addentry.setAttribute("text", "Ajouter une entree");
 						submit.setAttribute("visible", false);
 						contact.addingcontact = false;
+						remove.setAttribute("visible", true);
+					</handler>
+				</button>
+				<button id="remove" align="center" visible="true">Supprimer
+					<handler name="onclick">
+						var id = contact.getselectedid();
+						var dp = lesContacts.getPointer();
+						dp.setXPath("lesContacts:/contacts/personne[@id='"+id+"']/");
+						dp.deleteNode();
 					</handler>
 				</button>
 			</view>

@@ -10,7 +10,7 @@
 				<simplelayout axis="y" spacing="0" />
 				<grid datapath="lesContacts:/contacts/" contentdatapath="personne" showhscroll="true" shownitems="3">
 					<handler name="onselect">
-						detail.setAttribute("visible", "true");
+						detail.setAttribute("visible", true);
 						var id = this.getSelection()[0].getNodeAttribute("id");
 						showdata.setAttribute("datapath", "lesContacts:/contacts/personne[@id='"+id+"']/");
 					</handler>
